@@ -1,4 +1,4 @@
-from sudoku_utils import SudokuSolver
+from sudoku_solver import SudokuSolver
 
 
 def getBoardInput():
@@ -15,9 +15,16 @@ def getBoardInput():
     return board
 
 
-print(f'###### Sudoku Solver ######')
+print(f'############## Sudoku Solver ##############')
+print(f'Program that solves a 9x9 Sudoku, let\'s go!\n')
+
 initialBoard = getBoardInput()
 
 if initialBoard is not None:
     sudokuSolver = SudokuSolver(initialBoard)
-    sudokuSolver.showBoard()
+    if sudokuSolver.solve():
+        print('#####################')
+        sudokuSolver.showBoard()
+        print('#####################')
+    else:
+        print('The sudoku could not be solved')
