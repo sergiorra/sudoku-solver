@@ -14,3 +14,13 @@ class SudokuSolver:
                     print(self.board[i][j])
                 else:
                     print(f'{self.board[i][j]} ', end='')
+
+    def isEmpty(self):
+        """
+            Return a tuple (row, column) with the first empty space found
+        """
+        for i in range(len(self.board)):
+            for j in range(len(self.board)):
+                if not self.board[i][j]:
+                    return i, j
+        return None
