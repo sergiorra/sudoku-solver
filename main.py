@@ -10,6 +10,9 @@ def getBoardInput():
         except:
             print('Values not valid')
             return None
+        if len(str(rowValues)) != 9:
+            print('You need to enter 9 values for each row')
+            return None
         rowList = [int(i) for i in str(rowValues)]
         board.append(rowList)
     return board
