@@ -1,3 +1,6 @@
+from sudoku_utils import SudokuSolver
+
+
 def getBoardInput():
     board = []
     for i in range(1, 10):
@@ -11,7 +14,8 @@ def getBoardInput():
     return board
 
 
-initialBoard = getBoardInput()
+initial_board = getBoardInput()
 
-if initialBoard is not None:
-    print(initialBoard)
+if initial_board is not None:
+    sudoku_solver = SudokuSolver(initial_board)
+    print(sudoku_solver.board)
