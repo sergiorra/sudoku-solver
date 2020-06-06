@@ -7,8 +7,8 @@ def getBoardInput():
         rowValues = input(f'Enter entries for row number {i}: ')
         try:
             int(rowValues)
-        except:
-            print('Values not valid')
+        except ValueError:
+            print('Input values not valid')
             return None
         if len(str(rowValues)) != 9:
             print('You need to enter 9 values for each row')
